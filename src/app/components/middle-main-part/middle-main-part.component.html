@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <img src="..\assets\images\ngTurkey.png" width="50" alt="ngTurkey"><p>{{ title }}</p>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="content">
+  <h1>Manually Lazy Load</h1>
+    <p class="rainbow rainbow-text-animated">
+      Bu demo, çalışma sırasında service ve componentler kullanarak manuel lazy olarak nasıl yükleneceğini gösterir.
+    </p>
+</div>
+<mat-grid-list cols="4" rowHeight="300px">
+  <mat-grid-tile class="mat-left" colspan="1" rowspan="2">
+    <ng-template #widgetLeftContainer></ng-template></mat-grid-tile>
+  <mat-grid-tile class="mat-grid-tile-content" colspan="2" rowspan="2">
+    <mat-card class="example-card">
+      <picture>
+        <source media='(min-width:0px)' srcset="../assets/images/iron-man-movie.jpg">
+        <img mat-card-image src="" alt="Photo of a Iron man movie">
+      </picture>
+      <mat-card-content>
+      <p *ngFor="let text of contentText"> {{ text }} </p>
+      </mat-card-content>
+      <mat-card-actions class="content">
+        <button class="mr-10" mat-raised-button color="warn" (click)="loadLeftWidget('lazy-left-widget')">
+          Load Left Widget Lazy
+        </button>
+        <button class="mr-10" mat-raised-button color="warn" (click)="loadRightWidget('lazy-right-widget')">
+          Load Right Widget lazy
+        </button>
+      </mat-card-actions>
+  </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile class="mat-right" colspan="1" rowspan="2">
+  <ng-template #widgetRightContainer></ng-template></mat-grid-tile>
+</mat-grid-list>

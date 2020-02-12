@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: monospace;
+  
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.example-card {
+    width: 85%;
+}
+
+.mat-card-cvr{
+    width: 100%;
+    text-align:center;
+ }
+
+.mat-card-image {
+  width: calc(100% + 32px);
+  margin: -16px -16px 16px -16px !important;
+}
